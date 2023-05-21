@@ -1,0 +1,90 @@
+.prev 
+    background: white    
+    .prevItems
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 40px 5px
+        .left
+            text-align: center
+            .title
+                font-size: 30px
+                color: #c1a886
+                font-family: 'Playfair Display', serif
+                font-weight: 400
+                letter-spacing: 1px
+            .subtitle
+                font-size: 20px
+                color: #c1a886
+                font-family: 'Playfair Display', serif
+                font-weight: 400
+                overflow: hidden
+                &::before
+                    content: ''
+                    display: inline-block
+                    height: 2px
+                    width: 100%
+                    background: #c1a886
+                    position: relative
+                    vertical-align: middle
+                    margin-left: -100%
+                    left: -14px
+                &::after
+                    content: ''
+                    display: inline-block
+                    height: 2px
+                    width: 100%
+                    background: #c1a886
+                    position: relative
+                    vertical-align: middle
+                    margin-right: -100%
+                    right: -14px
+        .right
+            .nav 
+                background: none
+                border: none
+                cursor: pointer
+                font-family: 'Playfair Display', serif
+                font-size: 25px
+                text-transform: uppercase
+                margin-left: 15px
+                padding-left: 15px
+                &:hover
+                    opacity: 0.7
+                    transition: 0.1s ease
+
+
+.logo
+    text-align: center
+    padding: 173px 5px 164px
+    background: url("../image/main2.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    background-attachment: fixed
+    .logoTitle
+        font-size: 60px
+        font-family: 'Playfair Display', serif
+        max-width: 900px
+        margin: 0 auto
+        color: white
+        font-weight: 500
+        overflow: hidden
+        &::before
+            content: ""
+            display: block
+            height: 2px 
+            width: 100%
+            background: #c1a886
+            margin-bottom: 60px
+        &::after
+            content: ""
+            display: block
+            height: 2px 
+            width: 100%
+            background: #c1a886
+            margin-top: 60px
+
+
+
+
+

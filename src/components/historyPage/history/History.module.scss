@@ -1,0 +1,51 @@
+.history {
+    background: #f3f3f3;
+
+    .historyItems {
+        padding: 100px 150px;
+        text-align: center;
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .subtext {
+            max-width: 1000px;
+            margin: 0 auto 20px;
+            &::after {
+            content: "";
+            display: block;
+            background: #C1A886;
+            height: 2px;
+            width: 500px;
+            margin: 50px auto 50px;
+            }
+        }
+
+        .text {
+            font-size: 22px;
+            letter-spacing: 1px;
+            line-height: 30px;
+            margin: 50px 0;
+            text-align: left;
+        }
+
+        }
+        .nav {
+        position: fixed;
+        top: 50%;
+        right: 100px;
+        @media screen and (max-width: 1600px){
+            display: none;
+        }
+
+        li {
+            font-size: 20px;
+            margin-bottom: 5px;
+            a {
+            color: black;
+            }
+        }
+    }
+}
