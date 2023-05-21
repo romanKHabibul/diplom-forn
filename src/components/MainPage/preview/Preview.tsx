@@ -2,6 +2,7 @@ import cl from './preview.module.sass'
 import { Link } from 'react-router-dom'
 import { api } from '../../../redux/api/api'
 import { useAuth } from '../../../hooks/useAuth'
+import { useEffect, useState } from 'react'
 
 const Preview = () => {
 
@@ -9,12 +10,22 @@ const Preview = () => {
     const {data: user} = api.useGetProfileQuery(null, {
         skip: !accessToken
     })
+    const {activeScroll} = useAuth()
+    const [active, setActive] = useState(false)
+
+    useEffect(() => {
+        if(activeScroll){
+            setActive(true)
+        } else {
+            setActive(false)
+        }
+    }, [activeScroll])
 
     return (
         <>
         <div className={cl.prev}>
             <div className="container">
-                <div className={cl.prevItems}>
+                <div className={active ? cl.prevItems + ' ' + cl.active : cl.prevItems}>
                     <div className={cl.left}>
                         <h2 className={cl.title}>
                             СТАЛИНГРАДСКАЯ БИТВА

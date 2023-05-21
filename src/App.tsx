@@ -12,8 +12,17 @@ import History from './components/historyPage/history/History'
 import VeteranProfile from './components/veteranPage/veteranProfile/VeteranProfile'
 import UserProfile from './components/userPage/userProfile/UserProfile'
 import AdminProfile from './components/adminPage/adminProfile/AdminProfile'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 
 function App() {
+
+	useEffect(() => {
+		AOS.init();
+		AOS.refresh();
+	  }, []);
+
 	return (
 		<>
 		<Routes>

@@ -10,6 +10,7 @@ const Header = () => {
 
     const {pathname: location} = useLocation() 
     const [activeHeader, setActiveHeader] = useState(false)
+    const {setActiveScroll} = useActions()
     const active = [cl.header]
     const {user} = useAuth()
     const {data: profile, isLoading} = api.useGetProfileQuery(null, {
@@ -27,8 +28,10 @@ const Header = () => {
         const view = window.scrollY
         if(view > 500){
             setActiveHeader(true)
+            setActiveScroll(true)
         } else {
             setActiveHeader(false)
+            setActiveScroll(false)
         }
     }
 

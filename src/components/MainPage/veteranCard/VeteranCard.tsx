@@ -8,7 +8,7 @@ const VeteranCard: FC<{
 }> = ({inf}) => {
     return (
         <Link to={`/veterans/${inf.id}`}>
-        <div className={cl.card}>
+        <div data-aos='fade-up' data-aos-delay='50' className={cl.card}>
             <img src={inf.imagePath} alt="" className={cl.veteranImg}/>
             <div className={cl.inf}>
                 <h3 className={cl.title}>

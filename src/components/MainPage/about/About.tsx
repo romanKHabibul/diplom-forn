@@ -10,20 +10,20 @@ const About = () => {
     return (
         <div className="container">
         <div className={cl.about}>
-            {Array.isArray(inf) && inf.map(card => 
-            inf?.length ?
-            <div className={cl.card} key={card.id}>
-                <img src={card.imgLeft} alt="hero" />
-                <div className={cl.info}>
-                    <h3 className={cl.title}>
-                        {card.title}
-                    </h3>
-                    <p className={cl.text}>
-                        {card.description}
-                    </p>
+            {Array.isArray(inf) && inf.map((card, index) => 
+                inf?.length ?
+                <div data-aos='fade-up' data-aos-delay={50 * index * 2} className={cl.card} key={card.id}>
+                    <img src={card.imgLeft} alt="hero" />
+                    <div data-aos='fade-up' data-aos-delay={60 * index * 2} className={cl.info}>
+                        <h3 className={cl.title}>
+                            {card.title}
+                        </h3>
+                        <p className={cl.text}>
+                            {card.description}
+                        </p>
+                    </div>
+                    <img data-aos='fade-up' data-aos-delay={70 * index * 2} src={card.imgRight} alt="hero" />
                 </div>
-                <img src={card.imgRight} alt="hero" />
-            </div>
 
             :
 

@@ -6,10 +6,12 @@ const initialState: {
     user: IRequestedUser | null;
     accessToken: string;
     isLoading: boolean;
+    activeScroll: boolean;
 } = {
     user: null,
     accessToken: "",
-    isLoading: false
+    isLoading: false,
+    activeScroll: false
 }
 
 export const AuthSlice = createSlice({
@@ -19,6 +21,9 @@ export const AuthSlice = createSlice({
         logout(state){
             state.accessToken = ""
             state.user = null
+        },
+        setActiveScroll(state, {payload}){
+            state.activeScroll = payload
         }
     },
     extraReducers: builder => {
