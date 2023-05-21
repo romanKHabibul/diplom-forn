@@ -1,4 +1,3 @@
-import React from 'react'
 import cl from './AdminProfile.module.sass'
 import { api } from '../../../redux/api/api'
 import CommentCard from '../commentCard/CommentCard'

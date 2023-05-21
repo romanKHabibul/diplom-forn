@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import {FC} from 'react'
 import cl from "./CommentBlock.module.sass"
 import { api } from '../../../redux/api/api'
 import CommentCard from '../../adminPage/commentCard/CommentCard'

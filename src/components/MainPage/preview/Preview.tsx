@@ -1,4 +1,3 @@
-import React from 'react'
 import cl from './preview.module.sass'
 import { Link } from 'react-router-dom'
 import { api } from '../../../redux/api/api'

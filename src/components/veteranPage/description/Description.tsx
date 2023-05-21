@@ -1,25 +1,25 @@
-import {FC, useState} from 'react'
+import {FC} from 'react'
 import cl from "./Description.module.sass"
 import { IVeteran } from '../../../@types/veteran.types'
-import { useForm, SubmitHandler } from 'react-hook-form'
-import validator from "validator"
+// import { useForm, SubmitHandler } from 'react-hook-form'
+// import validator from "validator"
 
 const Description: FC<{
     inf: IVeteran
 }> = ({inf}) => {
 
-    const [openChange, setOpenChange] = useState(false)
-    const {register, handleSubmit, formState: {errors}, reset} = useForm<{
-        name: string;
-        email: string;
-    }>()
+    // const [openChange, setOpenChange] = useState(false)
+    // const {register, handleSubmit, formState: {errors}, reset} = useForm<{
+    //     name: string;
+    //     email: string;
+    // }>()
 
-    const submit: SubmitHandler<{
-        name: string;
-        email: string;
-    }> = data => {
-        console.log(data)
-    }
+    // const submit: SubmitHandler<{
+    //     name: string;
+    //     email: string;
+    // }> = data => {
+    //     console.log(data)
+    // }
 
     return (
         <div className={cl.description}>

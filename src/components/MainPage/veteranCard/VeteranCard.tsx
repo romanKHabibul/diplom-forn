@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import cl from "./VeteranCard.module.sass"
 import { Link } from 'react-router-dom'
 import { IVeteran } from '../../../@types/veteran.types'

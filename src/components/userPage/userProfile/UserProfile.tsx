@@ -46,7 +46,7 @@ const UserProfile = () => {
                             Изменить <IoIosArrowDown/>
                         </button>
                         }
-                        {openChange &&
+                        {openChange && inf &&
                             <ChangeForm setOpen={setOpenChange} open={openChange} userId={inf.id}/>
                         }
                     </div>
