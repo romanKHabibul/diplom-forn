@@ -38,12 +38,29 @@ const Veterans = () => {
                 </div>
 
                 :
-                
-                <div className={cl.veteranCards}>
-                   {veterans &&  veterans.filter(e => e.surname && e.surname.toLowerCase().includes(search.toLowerCase())).map(veteran => 
-                        <VeteranCard inf={veteran} key={veteran.id}/>
-                   )}
-                </div>
+
+                veterans && veterans.length > 0 
+
+                    ?
+                    
+                    <div className={cl.veteranCards}>
+                    {veterans &&  veterans.filter(e => e.surname && e.surname.toLowerCase().includes(search.toLowerCase())).map(veteran => 
+                            <VeteranCard inf={veteran} key={veteran.id}/>
+                    )}
+                    </div>
+
+                    :
+
+                    <div className={cl.empty}>
+                        <h2>
+                            Список пуст😕
+                            
+                        </h2>
+                        <p>
+                            К сожалению, не удалось получить список Ветеранов.<br/>
+                            Повторите попытку позже
+                        </p>
+                    </div>
                 }
             </div>
         </div>
