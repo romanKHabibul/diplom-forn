@@ -42,10 +42,13 @@ export const api = createApi({
             query: () => "/veterans",
             providesTags: () => [{type: "Veterans"}]
         }),
+        getVeteransWithPagination: builder.query<IVeteran[], {page: number, limit: number}>({
+            query: ({page, limit}) => `/veterans/pagination?page=${page}&limit=${limit}`
+        }),
         addVeterans: builder.mutation<null, IVeteran>({
             query: (request) => ({
                 url: "/veterans",
-                methof: 'POST',
+                method: 'POST',
                 body: request
             }),
             invalidatesTags: () => [{type: "Veterans"}]

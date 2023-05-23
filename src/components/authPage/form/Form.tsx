@@ -1,9 +1,10 @@
 import React from 'react'
-import cl from "./Form.module.sass"
+import cl from "./Form.module.scss"
 import {useLocation, Link, useNavigate} from 'react-router-dom'
 import { useForm, SubmitHandler} from 'react-hook-form'
 import { useActions } from '../../../hooks/useActions'
 import validator from 'validator'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Form = () => {
 
@@ -33,10 +34,11 @@ const Form = () => {
             loginThunk(data)
         } else {
             registerThunk(data)
-        }
+        } 
     }
 
     return (
+        <>
         <form 
             className={cl.form} 
             onSubmit={handleSubmit(submit)}
@@ -119,6 +121,7 @@ const Form = () => {
                 </button>
             </div>
         </form>
+        </>
     )
 }
 

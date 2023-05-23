@@ -1,12 +1,21 @@
 import { useAuth } from '../../hooks/useAuth'
-import {Navigate, Outlet} from "react-router-dom"
+import { Navigate } from "react-router-dom"
+import {FC} from 'react'
 
-const PrivateRoutes = () => {
+const PrivateRoutes: FC <{
+    children: React.ReactNode;
+}> = ({children}) => {
 
     const {accessToken} = useAuth()
 
+    if(accessToken){
+        return <Navigate to="/"/>
+    } 
+    
     return (
-        accessToken ? <Navigate to="/"/> : <Outlet/>
+        <>
+        {children}
+        </> 
     )
 }
 

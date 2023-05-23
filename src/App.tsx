@@ -15,6 +15,9 @@ import AdminProfile from './components/adminPage/adminProfile/AdminProfile'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react'
+import PrivateAdmin from './components/adminPage/PrivateAdmin'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -33,10 +36,16 @@ function App() {
 				<Veterans/>
 				<Footer/>
 			</>}/>
-			<Route element={<PrivateRoutes/>}>
-				<Route path="/login" element={<Login/>}/>
-				<Route path="/register" element={<Register/>}/>
-			</Route>
+			<Route path="/login" element={
+				<PrivateRoutes>
+					<Login/>
+				</PrivateRoutes>}
+			/>
+			<Route path="/register" element={
+				<PrivateRoutes>
+					<Register/>
+				</PrivateRoutes>}
+			/>
 			<Route path="/history" element={<>
 				<Header/>
 				<History/>
@@ -52,12 +61,15 @@ function App() {
 				<UserProfile/>
 				<Footer/>
 			</>}/>
-			<Route path="/admin" element={<>
-				<Header/>
-				<AdminProfile/>
-				<Footer/>
-			</>}/>
+			<Route path="/admin" element={
+				<PrivateAdmin>
+					<Header/>
+					<AdminProfile/>
+					<Footer/>
+				</PrivateAdmin>}
+			/>
 		</Routes>
+        <ToastContainer/>
 		</>
 	)
 }

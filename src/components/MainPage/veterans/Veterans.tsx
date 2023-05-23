@@ -8,10 +8,14 @@ import VeteranLoader from '../VeteranLoader'
 
 const Veterans = () => {
 
-    const {data: veterans, isLoading} = api.useGetVeteransQuery(null)
+    const [page, setPage] = useState(1)
+    const limit = 4
+    const {data: veterans, isLoading} = api.useGetVeteransWithPaginationQuery({page,limit})
+    const {data: allVeterans} = api.useGetVeteransQuery(null)
+    const totalPages = allVeterans && Math.ceil(allVeterans.length / limit)
 
     const [search, setSearch] = useState("")
-
+    
     return (
         <div className={cl.veterans}>
         <div className="container">
@@ -44,8 +48,12 @@ const Veterans = () => {
                     ?
                     
                     <div className={cl.veteranCards}>
-                    {veterans &&  veterans.filter(e => e.surname && e.surname.toLowerCase().includes(search.toLowerCase())).map(veteran => 
+                    {veterans && veterans.filter(e => e.surname && e.surname.toLowerCase().includes(search.toLowerCase())).map(veteran => 
+                        veteran?.surname 
+                        ?
                             <VeteranCard inf={veteran} key={veteran.id}/>
+                        :
+                            <h2>Ветеран с фамилией не найден</h2>
                     )}
                     </div>
 
@@ -62,6 +70,17 @@ const Veterans = () => {
                         </p>
                     </div>
                 }
+            </div>
+            <div className={cl.pagination}>
+                {[...new Array(totalPages)].map((_,index) => 
+                    <button
+                        onClick={() => setPage(index+1)}
+                        className={index + 1 == page ? cl.paginationItem + ' ' + cl.active : cl.paginationItem} 
+                        key={index}
+                    >
+                        {index + 1}
+                    </button>
+                )}
             </div>
         </div>
         </div>
