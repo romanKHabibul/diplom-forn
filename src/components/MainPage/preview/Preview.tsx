@@ -1,4 +1,4 @@
-import cl from './preview.module.sass'
+import cl from './preview.module.scss'
 import { Link } from 'react-router-dom'
 import { api } from '../../../redux/api/api'
 import { useAuth } from '../../../hooks/useAuth'

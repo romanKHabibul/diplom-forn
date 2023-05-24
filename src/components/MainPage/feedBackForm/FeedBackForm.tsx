@@ -1,4 +1,4 @@
-import cl from './FeedBackForm.module.sass'
+import cl from './FeedBackForm.module.scss'
 import { useNavigate } from 'react-router'
 import { api } from '../../../redux/api/api'
 import { SubmitHandler, useForm } from 'react-hook-form'

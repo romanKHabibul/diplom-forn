@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import cl from './Header.module.sass'
+import cl from './Header.module.scss'
 import { Link, useLocation } from 'react-router-dom'
 import {FiLogIn} from 'react-icons/fi'
 import { useAuth } from '../../../hooks/useAuth'

@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import {Route, Routes} from "react-router-dom"
 import Header from './components/MainPage/header/Header'
 import Preview from './components/MainPage/preview/Preview'

@@ -1,5 +1,5 @@
 import FeedBackForm from '../feedBackForm/FeedBackForm'
-import cl from './Footer.module.sass'
+import cl from './Footer.module.scss'
 
 const Footer = () => {
 

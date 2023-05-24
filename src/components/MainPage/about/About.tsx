@@ -1,4 +1,4 @@
-import cl from './About.module.sass'
+import cl from './About.module.scss'
 
 const About = () => {
     const inf = [

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import cl from "./Veteran.module.sass"
+import cl from "./Veteran.module.scss"
 import {BiSearchAlt} from 'react-icons/bi'
 import {MdOutlineClose} from "react-icons/md"
 import { api } from '../../../redux/api/api'
@@ -72,7 +72,8 @@ const Veterans = () => {
                 }
             </div>
             <div className={cl.pagination}>
-                {[...new Array(totalPages)].map((_,index) => 
+                {allVeterans &&
+                [...new Array(totalPages)].map((_,index) => 
                     <button
                         onClick={() => setPage(index+1)}
                         className={index + 1 == page ? cl.paginationItem + ' ' + cl.active : cl.paginationItem} 
