@@ -26,7 +26,13 @@ const Veterans = () => {
                     </h2>
                     <div className={cl.inputBlock}>
                         <BiSearchAlt className={cl.lupa}/>
-                        <input value={search} onChange={e => setSearch(e.target.value)} type="text" className={cl.searchInput} placeholder="Попробуйте найти..."/>
+                        <input 
+                            value={search} 
+                            onChange={e => setSearch(e.target.value)} 
+                            type="text" 
+                            className={cl.searchInput} 
+                            placeholder="Попробуйте найти..."
+                        />
                         {search &&
                         <button onClick={() => setSearch("")} className={cl.remove}>
                             <MdOutlineClose/>

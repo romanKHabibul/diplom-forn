@@ -7,7 +7,7 @@ import { IAddFeedBack, IFeedBack} from '../../@types/feedBack.types'
 
 export const api = createApi({
     reducerPath: "api",
-    tagTypes: ["Profile", "Veterans", "Feedback"],
+    tagTypes: ["Profile", "Veterans", "Feedback", "VeteransWPagi"],
     baseQuery: fetchBaseQuery({
         baseUrl: API_URL,
         prepareHeaders: (headers, {getState}) => {
@@ -43,7 +43,8 @@ export const api = createApi({
             providesTags: () => [{type: "Veterans"}]
         }),
         getVeteransWithPagination: builder.query<IVeteran[], {page: number, limit: number}>({
-            query: ({page, limit}) => `/veterans/pagination?page=${page}&limit=${limit}`
+            query: ({page, limit}) => `/veterans/pagination?page=${page}&limit=${limit}`,
+            providesTags: () => [{type: "VeteransWPagi"}]
         }),
         addVeterans: builder.mutation<null, IVeteran>({
             query: (request) => ({
@@ -58,7 +59,7 @@ export const api = createApi({
                 url: `/veterans/${id}`,
                 method: "DELETE"
             }),
-            invalidatesTags: () => [{type: "Veterans"}]
+            invalidatesTags: () => [{type: "Veterans"}, {type: "VeteransWPagi"}]
         }),
         addFeedBacks: builder.mutation<any, IAddFeedBack>({
             query: (request) => ({
@@ -66,7 +67,7 @@ export const api = createApi({
                 method: 'POST',
                 body: request
             }),
-            invalidatesTags: () => [{type: 'Feedback'}]
+            invalidatesTags: () => [{type: 'Feedback'}, {type: "VeteransWPagi"}]
         }),
         getFeedback: builder.query<IFeedBack[], null>({
             query: () => '/feedback',
