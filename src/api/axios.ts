@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const API_URL = "http://localhost:1000/api"
+export const API_URL = "https://veterans.onrender.com//api"
 
 const getContentType = () => ({
     "Content-type": "application/json"
