@@ -9,7 +9,7 @@ import VeteranLoader from '../VeteranLoader'
 const Veterans = () => {
 
     const [page, setPage] = useState(1)
-    const limit = 4
+    const limit = 6
     const {data: veterans, isLoading} = api.useGetVeteransWithPaginationQuery({page,limit})
     const {data: allVeterans} = api.useGetVeteransQuery(null)
     const totalPages = allVeterans && Math.ceil(allVeterans.length / limit)
